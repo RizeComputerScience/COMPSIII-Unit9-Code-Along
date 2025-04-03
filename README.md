@@ -1,7 +1,8 @@
 # COMPS III: Unit 8 Code Along
 
 ## Overview
-Over the next 2 weeks, we’ll be building a class that can execute GET, POST, PUT, and DELETE requests to a specified endpoint. We will use the [Reqres API](https://reqres.in/) for our requests because it is a simple API that is designed specifically for practicing your API skills! 
+
+We’ll be building a class that can execute GET, POST, PUT, and DELETE requests to a specified endpoint. We will use the [Reqres API](https://reqres.in/) for our requests because it is a simple API that is designed specifically for practicing your API skills! 
 
 By the end of this code along, our `Reqres` class will have full CRUD functionality to perform `GET`, `POST`, `PUT`, and `DELETE` requests.
 
