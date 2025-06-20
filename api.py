@@ -31,7 +31,6 @@ class DummyJSONClient:
     def update_recipe(self, data, id):
         # Make a PUT request to the recipes endpoint with the data
         response = requests.put(f"{self.base_url}/{id}", json=data)
-        print(response.status_code, response.text)
         if response.status_code == 200:
             return response.json() 
         else: 
