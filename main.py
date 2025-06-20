@@ -22,9 +22,9 @@ data = {
     "mealType": ["breakfast"]
 }
 new_recipe = client.create_recipe(data)
-print("Created User:", new_recipe)
+print("Created Recipe:", new_recipe)
 
-# # PUT Demonstration
+# PUT Demonstration
 print("\n--- PUT Requests ---")
 update_data = {
     "name": "Updated Pancake Recipe",
@@ -37,4 +37,4 @@ print(updated_recipe)
 # # DELETE Demonstration
 print("\n--- DELETE Requests ---")
 deleted = client.delete_recipe(2)
-print("User Deleted:", deleted)
+print("Recipe Deleted:", deleted)
