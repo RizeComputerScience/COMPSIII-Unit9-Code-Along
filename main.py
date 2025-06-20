@@ -1,28 +1,40 @@
 from api import *
 
 # Test outputs
-client = ReqresAPIClient()
+client = DummyJSONClient()
 
 print("--- GET Requests ---")
-users = client.get_users()
+recipes = client.get_recipes()
+print(recipes["recipes"][0]["name"])
 
-print(users)
-print(users["data"][0]["first_name"])
-specific_user = client.get_user_by_id(2)
-print("Specific User:", specific_user)
+specific_recipe = client.get_single_recipe(2)
+print(specific_recipe['ingredients'])
 
-# POST Demonstration
+# # POST Demonstration
 print("\n--- POST Requests ---")
-new_user = client.create_user("Alice Smith", "Developer")
-print("Created User:", new_user)
+data = {
+    "name": "Chocolate Chip Pancakes",
+    "ingredients": ["flour", "milk", "eggs", "chocolate chips"],
+    "instructions": "Mix ingredients, cook on skillet until golden brown.",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 5,
+    "cuisine": "American",
+    "mealType": ["breakfast"]
+}
+new_recipe = client.create_recipe(data)
+print("Created User:", new_recipe)
 
-# PUT Demonstration
+# # PUT Demonstration
 print("\n--- PUT Requests ---")
-updated_user = client.update_user(2, "Alice Johnson", "Designer")
-print("Updated User:")
-print(updated_user)
+update_data = {
+    "name": "Updated Pancake Recipe",
+    "prepTimeMinutes": 15
+}
+updated_recipe = client.update_recipe(update_data, 2)
+print("Updated Recipe:")
+print(updated_recipe)
 
-# DELETE Demonstration
+# # DELETE Demonstration
 print("\n--- DELETE Requests ---")
-deleted = client.delete_user(2)
+deleted = client.delete_recipe(2)
 print("User Deleted:", deleted)
